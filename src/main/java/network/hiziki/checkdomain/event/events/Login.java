@@ -17,8 +17,6 @@ public class Login {
         InetSocketAddress virtualHost = connection.getVirtualHost();
         String hostName = virtualHost.getHostName();
 
-        Main.getPlugin().getLogger().info(hostName); // デバッグ用
-
         if (!Main.getDomainList().contains(hostName)) { // 許可されるドメインか確認
             String action = Main.getUnmatchedDomainAction(); // ドメインが一致しない場合の処理を取得
 
