@@ -1,0 +1,5 @@
+name: CheckDomain
+version: '${project.version}'
+main: network.hiziki.checkdomain.Main
+author: hi_kun_JPN
+description: check domain.
