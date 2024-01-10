@@ -21,19 +21,18 @@ public class Login {
             // ドメインが一致しない場合の処理を取得
             String action = Main.getUnmatchedDomainAction();
 
-            // 許可する場合はreturn
-            if (action.equals("allow")) return;
+            // 「kick-logging」の場合はログに記録
+            if (action.equals("kick-logging") || action.equalsIgnoreCase("allow-logging")) {
+                Main.getPlugin().getLogger().info(name + "が許可されていないドメイン「" + hostName + "」で接続を行いました。");
+            }
 
-            String kickMessage = String.join("\n", Main.getKickMessage());
+            // 許可する場合はreturn
+            if (action.equals("allow") || action.equals("allow-logging")) return;
 
             // 接続を禁止
             e.setCancelled(true);
+            String kickMessage = String.join("\n", Main.getKickMessage());
             e.setCancelReason(new TextComponent(kickMessage));
-
-            // 「kickLogging」の場合はログに記録
-            if (action.equals("kickLogging")) {
-                Main.getPlugin().getLogger().info(name + "が許可されていないドメイン「" + hostName + "」で接続を行いました。");
-            }
         }
     }
 }

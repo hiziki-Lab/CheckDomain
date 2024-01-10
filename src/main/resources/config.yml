@@ -1,13 +1,17 @@
+# 絶対に書き換えないでください。
+configVersion: '1.0'
+
 # your domain
 domainList:
   - 'mc.example.com'
   - 'play.example.com'
 
-# ドメインが一致しない場合の処理 [allow, kick, kickLogging]
+# ドメインが一致しない場合の処理 [allow, allow-logging, kick, kick-logging]
 # allow: 何もせず許可
+# allow-logging: ログインを許可し、プレイヤーとドメインをログに記録
 # kick: ログインをキャンセル
-# kickLogging: ログインをキャンセルし、プレイヤーとドメインをログに記録
-unmatchedDomainAction: 'kickLogging'
+# kick-logging: ログインをキャンセルし、プレイヤーとドメインをログに記録
+unmatchedDomainAction: 'kick-logging'
 
 kickMessage:
   - '使用できないドメインです。'

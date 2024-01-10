@@ -72,7 +72,8 @@ public final class Main extends Plugin {
     }
 
     private boolean isNormalConfig() {
-        return unmatchedDomainAction.equals("allow") || unmatchedDomainAction.equals("kick") || unmatchedDomainAction.equals("kickLogging");
+        return unmatchedDomainAction.equalsIgnoreCase("allow") || unmatchedDomainAction.equalsIgnoreCase("allow-logging") ||
+                unmatchedDomainAction.equalsIgnoreCase("kick") || unmatchedDomainAction.equalsIgnoreCase("kick-logging");
     }
 
     public static Plugin getPlugin() {
