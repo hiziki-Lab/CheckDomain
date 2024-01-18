@@ -11,6 +11,8 @@ import java.nio.file.Files;
 import java.util.List;
 
 public final class Main extends Plugin {
+    private static final double PLUGIN_VERSION = 1.1;
+
     private static Plugin plugin;
     private static List<String> domainList;
     private static List<String> kickMessage;
@@ -26,7 +28,6 @@ public final class Main extends Plugin {
 
         // 正常なconfigか確認
         if (isNormalConfig()) {
-
             new EventManager(this);
             getLogger().info("プラグインは正常に起動しました。");
         } else {
