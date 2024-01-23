@@ -1,7 +1,7 @@
 # 絶対に書き換えないでください。
 configVersion: '1.1'
 
-# your domain
+# 許可するドメインのリスト
 domainList:
   - 'mc.example.com'
   - 'play.example.com'
